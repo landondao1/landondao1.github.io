@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+import {MemoryRouter, Routes, Route, Link} from 'react-router-dom';
 
 import Game from './js/Game';
 import resume from './css/images/landon_dao_resume.pdf';
@@ -11,7 +11,7 @@ import "./css/index.css"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <BrowserRouter>
+        <MemoryRouter>
             <div id="navbar">
                 <ul>
                     <li>
@@ -33,7 +33,7 @@ root.render(
                 <Route path="/" element={<h1>home</h1>}></Route>
                 <Route path="/projects/game" element={<Game />}></Route>
             </Routes>
-        </BrowserRouter>
+        </MemoryRouter>
 
     </React.StrictMode>
 );
