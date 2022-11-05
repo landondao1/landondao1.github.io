@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/profile/static/css/main.073c9b0a.css",
-    "main.js": "/profile/static/js/main.482b93a1.js",
-    "static/js/787.f2a0fa2f.chunk.js": "/profile/static/js/787.f2a0fa2f.chunk.js",
-    "static/media/logo.svg": "/profile/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/profile/index.html",
-    "main.073c9b0a.css.map": "/profile/static/css/main.073c9b0a.css.map",
-    "main.482b93a1.js.map": "/profile/static/js/main.482b93a1.js.map",
-    "787.f2a0fa2f.chunk.js.map": "/profile/static/js/787.f2a0fa2f.chunk.js.map"
+    "main.css": "/static/css/main.5c14e0b2.css",
+    "main.js": "/static/js/main.20138ea0.js",
+    "static/media/map.png": "/static/media/map.1ba33526f47c5cff75a1.png",
+    "static/media/landon_dao_resume.pdf": "/static/media/landon_dao_resume.2e464a9fd35304ed7648.pdf",
+    "index.html": "/index.html",
+    "main.5c14e0b2.css.map": "/static/css/main.5c14e0b2.css.map",
+    "main.20138ea0.js.map": "/static/js/main.20138ea0.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.482b93a1.js"
+    "static/css/main.5c14e0b2.css",
+    "static/js/main.20138ea0.js"
   ]
 }
