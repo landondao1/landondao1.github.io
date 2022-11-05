@@ -1,17 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+
+import Game from './js/Game';
+import resume from './css/images/landon_dao_resume.pdf';
+
+import "./css/index.css"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+    <React.StrictMode>
+        <BrowserRouter>
+            <div id="navbar">
+                <ul>
+                    <li>
+                        <span>LANDON DAO</span>
+                    </li>
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/projects/game">Game</Link>
+                    </li>
+                    <li>
+                        <a href={resume} target="_blank" rel="noreferrer">Download Resume</a>
+                    </li>
+                </ul>
+            </div>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+            <Routes>
+                <Route path="/" element={<h1>home</h1>}></Route>
+                <Route path="/projects/game" element={<Game />}></Route>
+            </Routes>
+        </BrowserRouter>
+
+    </React.StrictMode>
+);
