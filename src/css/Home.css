@@ -1,0 +1,167 @@
+#feature {
+    background: #233d7e;
+    background-image: linear-gradient(to right, rgba(35, 61, 126, 0.6), rgba(57, 102, 163, 0.6), rgba(35, 61, 126, 0.6)),url(images/home/background_waterfall.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-box-shadow: inset 0px -5px 5px rgba(0,0,0,0.3);
+    -moz-box-shadow: inset 0px -5px 5px rgba(0,0,0,0.3);
+    box-shadow: inset 0px -5px 5px rgba(0,0,0,0.3);
+    background-size: cover;
+    min-height: 700px;
+    max-height: 900px;
+    height: 100vh;
+    
+    /* Center the content */
+    justify-content: center;
+    display: flex;
+}
+
+#feature-content {
+    margin: auto;
+}
+
+#feature .title,
+#feature .subtitle {
+    text-shadow: 1px 1px black;
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#feature .title  {
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: 65px;
+}
+
+#feature .subtitle  {
+    font-weight: 100;
+    font-size: 25px;
+    margin-top: 0;
+}
+
+section > div {
+    max-width: 100%;
+    width: 1000px;
+    margin: auto;
+}
+
+section h2 {
+    border-bottom: solid 1px #939393;
+    padding-bottom: 5px;
+    color: #3d3d3d;
+}
+
+
+section:not(#feature) {
+    padding: 20px 20px 0px 20px;
+}
+section:not(#feature):last-child {
+    padding-bottom: 40px;
+}
+
+section:not(#feature) p {
+    font-weight: 100;
+    margin-bottom: 0;
+}
+
+.centered {
+    text-align: center;
+}
+
+.polaroids {
+    white-space: nowrap;
+    width: 95%;
+}
+.polaroid {
+    -webkit-box-shadow: 0px 2px 5px #2f2f2f;
+    -moz-box-shadow: 0px 2px 5px #2f2f2f;
+    box-shadow: 0px 2px 5px #2f2f2f;
+    background-color: white;
+    display: inline-block;
+    padding: 20px 20px 0;
+    position: relative;
+    height: 310px;
+    width: 300px;
+}
+.polaroid-picture {
+    border: solid 1px #e2e2e2;
+    overflow: hidden;
+    height: 250px;
+    width: 100%;
+}
+.polaroid-text {
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    font-family: sans-serif;
+    white-space: nowrap;
+    font-weight: 100;
+    overflow: hidden;
+    font-size: 16px;
+    margin-top: 8px;
+    display: block;
+    color: black;
+}
+.polaroid:nth-child(1n) {
+    -webkit-transform: rotate(-4deg);
+    -moz-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+}
+.polaroid:nth-child(2n) {
+    -webkit-transform: rotate(4deg);
+    -moz-transform: rotate(4deg);
+    transform: rotate(4deg);
+    z-index: 1;
+}
+.polaroid:nth-child(3n) {
+    -webkit-transform: rotate(12deg);
+    -moz-transform: rotate(12deg);
+    transform: rotate(12deg);
+}
+.polaroid:hover {
+    -webkit-box-shadow: 0 10px 20px #252525;
+    -moz-box-shadow: 0 10px 20px #252525;
+    box-shadow: 0 10px 20px #252525;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: all 0.2s; /* Safari */
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.concepts {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: grid;
+}
+
+.concept {    
+    border: 1px solid #929393;
+    padding: 10px;
+    margin: 5px;
+}
+
+.concept span {
+    font-size: 12px;
+}
+
+.concept .tags {
+    padding-top: 5px;
+}
+
+.concept .tags > img {
+    display: inline-block;
+    margin-right: 3px;
+    height: 16px;
+    width: 16px;
+}
+
+.ansible {content: url("images/home/icon_ansible.png")}
+.api-gateway {content: url("images/home/icon_api_gateway.png")}
+.chef {content: url("images/home/icon_chef.png")}
+.codebuild {content: url("images/home/icon_aws_codebuild.png")}
+.github {content: url("images/home/icon_github.png")}
+.jenkins {content: url("images/home/icon_jenkins.png")}
+.lambda {content: url("images/home/icon_lambda.png")}
+.s3 {content: url("images/home/icon_s3.png")}
+.terraform {content: url("images/home/icon_terraform.png")}

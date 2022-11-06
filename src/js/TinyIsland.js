@@ -1,10 +1,10 @@
 import {Component, React} from 'react'
 
-import characterDownImage from "../css/images/character_down.png"
-import characterRightImage from "../css/images/character_right.png"
-import characterLeftImage from "../css/images/character_left.png"
-import characterUpImage from "../css/images/character_up.png"
-import mapImage from "../css/images/map.png"
+import characterDownImage from "../css/images/island/character_down.png"
+import characterRightImage from "../css/images/island/character_right.png"
+import characterLeftImage from "../css/images/island/character_left.png"
+import characterUpImage from "../css/images/island/character_up.png"
+import mapImage from "../css/images/island/map.png"
 
 import SpawnPoints from './game/SpawnPoints'
 import Sprite from "./game/Sprite"
@@ -20,7 +20,7 @@ const tileWidth = 48;
 
 const moveDistance = 5;
 
-class Game extends Component {
+class TinyIsland extends Component {
 
     constructor(props) {
         super(props);
@@ -206,4 +206,4 @@ class Game extends Component {
     }
 }
 
-export default Game;
+export default TinyIsland;

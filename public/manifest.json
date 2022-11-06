@@ -1,7 +1,13 @@
 {
     "short_name": "Landon Dao | Software Engineer",
     "name": "Landon Dao | Software Engineer",
-    "icons": [],
+    "icons": [
+      {
+        "src": "yellow_partyhat_16.png",
+        "sizes": "16x16",
+        "type": "image/x-icon"
+      }
+    ],
     "start_url": "./index.html",
     "display": "standalone",
     "theme_color": "#000000",
