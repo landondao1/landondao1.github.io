@@ -6,7 +6,45 @@ import polaroid3 from "../css/images/home/landon_mountains.jpg"
 
 import "../css/Home.css"
 
+const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+]
+
 class Home extends Component {
+
+    getTimestamp(date) {
+        if (date === "" || date === "Present") {
+          return new Date().getTime();
+        }
+        const datetime = date.split(" ");
+        const month = months.indexOf(datetime[0]);
+        const year = datetime[1];
+        return new Date(year, month).getTime();
+    }
+
+    getYearsOfExperience() {
+        const diff = Date.now() - this.getTimestamp("May 2015");
+        const years = Math.round(diff / 3154000000) / 10
+        let text = "less than a year";
+        if (years === 1) {
+          text =  "1 year";
+        }
+        else if (years > 0) {
+          text =  years + " years";
+        }
+        return text;
+    }
 
     render() {
         return (
@@ -41,8 +79,8 @@ class Home extends Component {
                 <section>
                     <div>
                         <h2>About Me</h2>
-                        <p class="summary">
-                            I am a technology generalist. 
+                        <p>
+                            I am a full-stack generalist. 
                             My desired job description is something that is difficult and challenging. 
                             I love to grow and surpass expectations.
                         </p>
@@ -54,7 +92,8 @@ class Home extends Component {
                             software might have on a server. My style of development tends to focus on optimization and maintainability. 
                             I add tracing to my code to make metrics like five 9's easily visible from a back-end perspective. 
                             I use a combination of object-oriented and functional programming to make my code cleaner. 
-                            Every day I try to push the limits of my knowledge and capabilities.
+                            Every day I try to push the limits of my knowledge and capabilities. 
+                            <b> I currently have {this.getYearsOfExperience()} of experience.</b>
                         </p>
                     </div>
                 </section>
@@ -80,6 +119,7 @@ class Home extends Component {
                                 <span>Serverless: Event Processing</span>
                                 <div className="tags">
                                     <img className="api-gateway" alt='AWS API Gateway' title='AWS API Gateway'></img>
+                                    <img className="sqs" alt='AWS SQS' title='AWS SQS'></img>
                                     <img className="lambda" alt='AWS Lambda' title='AWS Lambda'></img>
                                 </div>
                             </div>

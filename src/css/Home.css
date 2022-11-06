@@ -164,4 +164,5 @@ section:not(#feature) p {
 .jenkins {content: url("images/home/icon_jenkins.png")}
 .lambda {content: url("images/home/icon_lambda.png")}
 .s3 {content: url("images/home/icon_s3.png")}
+.sqs {content: url("images/home/icon_sqs.png")}
 .terraform {content: url("images/home/icon_terraform.png")}
