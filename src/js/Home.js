@@ -6,20 +6,8 @@ import polaroid3 from "../css/images/home/landon_mountains.jpg"
 
 import "../css/Home.css"
 
-const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-]
+import concepts from "./home/data/concepts.js"
+import months from "./home/data/months.js"
 
 class Home extends Component {
 
@@ -46,9 +34,53 @@ class Home extends Component {
         return text;
     }
 
+    showPopup(e) {
+        // Get the id of the clicked concept
+        var target = e.target;
+        if (!target.classList.contains("concept")) {
+            while ((target = target.parentElement) && !target.classList.contains("concept"));
+        }
+
+        let concept = concepts[target.id.replace("concept", "")];
+        let icons = [];
+        concept.tags.forEach((tag) => {icons.push('<img class="'+tag+'" alt="'+tag+'" title="'+tag+'"></img>')});
+
+        document.getElementById("popup-title").innerText = concept.title;
+        document.getElementById("popup-content").innerText = concept.description;
+        document.getElementById("popup-icons").innerHTML = icons.join("");
+        document.getElementById("popup").style.display = "flex";
+        
+    }
+
+    hidePopup(e) {
+        document.getElementById("popup").style.display = "none";
+    }
+
     render() {
         return (
             <main>
+                <div id='popup'>
+                    <div className='widget'>
+                        <div className='title-area'>
+                            <div id='popup-title'>Title</div>
+                            <div className='close-button' onClick={this.hidePopup}>X</div>
+                        </div>
+                        <div className='content-area'>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Tech Stack</td>
+                                        <td id="popup-icons"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Description</td>
+                                        <td id="popup-content"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
                 <section id="feature">
                     <div id="feature-content">
                         <div className="centered polaroids">
@@ -101,54 +133,18 @@ class Home extends Component {
                     <div>
                         <h2>Understood Concepts</h2>
                         <div className='concepts'>
-                            <div className="concept">
-                                <span>CI/CD: Jenkins</span>
-                                <div className="tags">
-                                    <img className="jenkins" alt='Jenkins' title='Jenkins'></img>
-                                    <img className="github" alt='GitHub' title='GitHub'></img>
-                                </div>
-                            </div>
-                            <div className="concept">
-                                <span>CI/CD: AWS Codebuild</span>
-                                <div className="tags">
-                                    <img className="codebuild" alt='AWS Codebuild' title='AWS Codebuild'></img>
-                                    <img className="github" alt='GitHub' title='GitHub'></img>
-                                </div>
-                            </div>
-                            <div className="concept">
-                                <span>Serverless: Event Processing</span>
-                                <div className="tags">
-                                    <img className="api-gateway" alt='AWS API Gateway' title='AWS API Gateway'></img>
-                                    <img className="sqs" alt='AWS SQS' title='AWS SQS'></img>
-                                    <img className="lambda" alt='AWS Lambda' title='AWS Lambda'></img>
-                                </div>
-                            </div>
-                            <div className="concept">
-                                <span>Serverless: Web Application</span>
-                                <div className="tags">
-                                    <img className="api-gateway" alt='AWS API Gateway' title='AWS API Gateway'></img>
-                                    <img className="lambda" alt='AWS Lambda' title='AWS Lambda'></img>
-                                    <img className="s3" alt='AWS S3' title='AWS S3'></img>
-                                </div>
-                            </div>
-                            <div className="concept">
-                                <span>IaC: Ansible</span>
-                                <div className="tags">
-                                    <img className="ansible" alt='Ansible' title='Ansible'></img>
-                                </div>
-                            </div>
-                            <div className="concept">
-                                <span>IaC: Terraform</span>
-                                <div className="tags">
-                                    <img className="terraform" alt='Terraform' title='Terraform'></img>
-                                </div>
-                            </div>
-                            <div className="concept">
-                                <span>IaC: Chef</span>
-                                <div className="tags">
-                                    <img className="chef" alt='Chef' title='Chef'></img>
-                                </div>
-                            </div>
+                            {concepts.map((concept, index) => {
+                                return (
+                                    <div id={"concept"+index} key={index} className="concept" onClick={this.showPopup}>
+                                        <span>{concept.title}</span>
+                                        <div className="tags">
+                                            {concept.tags.map((tag, index) => {
+                                                return <img key={index} className={tag} alt={tag} title={tag}></img>;
+                                            })}
+                                        </div>
+                                    </div> 
+                                )
+                            })}
                         </div>
                     </div>
                 </section>

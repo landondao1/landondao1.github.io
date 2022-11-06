@@ -1,3 +1,7 @@
+table td {
+    vertical-align: top;
+}
+
 #feature {
     background: #233d7e;
     background-image: linear-gradient(to right, rgba(35, 61, 126, 0.6), rgba(57, 102, 163, 0.6), rgba(35, 61, 126, 0.6)),url(images/home/background_waterfall.jpg);
@@ -98,7 +102,7 @@ section:not(#feature) p {
     font-weight: 100;
     overflow: hidden;
     font-size: 16px;
-    margin-top: 8px;
+    margin-top: 15px;
     display: block;
     color: black;
 }
@@ -130,6 +134,58 @@ section:not(#feature) p {
     z-index: 10;
 }
 
+#popup {
+    background-color: #00000040;
+    position: fixed;
+    z-index: 9999;
+    color: #343434;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+
+    display: none;
+    flex-direction: column;
+}
+
+#popup .widget {
+    -webkit-box-shadow: 0px 2px 2px 0px #00000070;
+    -moz-box-shadow: 0px 2px 2px 0px #00000070;
+    box-shadow: 0px 2px 2px 0px #00000070;
+    background-color: white;
+    border-radius: 2px;
+    padding: 25px;
+    width: 500px;
+    margin: auto;
+}
+
+.title-area {
+    border-bottom: solid 1px #a3a3a3;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.close-button {
+    font-weight: bold;
+    padding: 3px 8px;
+    font-size: 14px;
+    float: right;
+}
+
+.close-button:hover {
+    background-color: #f5f5f5c2;
+    border-radius: 2px;
+    cursor: pointer;
+    color: gray;
+}
+
+#popup-title {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px;
+}
+
 .concepts {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     display: grid;
@@ -141,6 +197,17 @@ section:not(#feature) p {
     margin: 5px;
 }
 
+.concept:hover {
+    -webkit-box-shadow: 0px 2px 2px 0px #00000040;
+    -moz-box-shadow: 0px 2px 2px 0px #00000040;
+    box-shadow: 0px 2px 2px 0px #00000040;
+    cursor: pointer;
+
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
 .concept span {
     font-size: 12px;
 }
@@ -149,6 +216,7 @@ section:not(#feature) p {
     padding-top: 5px;
 }
 
+#popup-icons > img,
 .concept .tags > img {
     display: inline-block;
     margin-right: 3px;
