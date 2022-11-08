@@ -1,40 +1,41 @@
 class Sprite {
-    constructor(context, image, x, y, frames = {max: 1}, sprites) {
-        this.context = context;
+    constructor(canvas, image, x, y, frames = {max: 1}, sprites) {
+        this.canvas = canvas;
+        this.context = this.canvas.getContext('2d');
+        
         this.image = image;
         this.x = x;
         this.y = y;
         this.frames = {...frames, val: 0, elapsed: 0}
         this.sprites = sprites;
         this.moving = false;
-
-        this.image.onload = () => {
-            this.width = this.image.width / this.frames.max;
-            this.height = this.image.height;
-        }
     }
 
     hasCollided(obj) {
-        return this.x + this.width >= obj.x && this.x <= obj.x + obj.width && this.y <= obj.y + obj.height && this.y + this.height >= obj.y
+        return this.x + (this.image.width / this.frames.max) >= obj.x && this.x <= obj.x + obj.width && this.y <= obj.y + obj.height && this.y + this.image.height >= obj.y
     }
 
     willCollide(x, y, obj) {
-        return this.x + x + this.width >= obj.x && this.x + x <= obj.x + obj.width && this.y + y <= obj.y + obj.height && this.y + y + this.height >= obj.y
+        return this.x + x + (this.image.width / this.frames.max) >= obj.x && this.x + x <= obj.x + obj.width && this.y + y <= obj.y + obj.height && this.y + y + this.image.height >= obj.y
     }
 
-    draw() {
-        // console.info(this.image);
+    getFixedPositionOnCanvas(tileWidth) {
+        return {x: (this.x * -1) + (this.canvas.width/2) - tileWidth, y: (this.y * -1) + (this.canvas.height/2)};
+    }
+
+    draw(animate=true, offset={x: 0, y: 0}) {
         this.context.drawImage(this.image, 
-                                this.frames.val * this.width, 
+                                this.frames.val * (this.image.width / this.frames.max), 
                                 0, 
                                 this.image.width / this.frames.max,
                                 this.image.height,
-                                this.x,
-                                this.y,
+                                this.x + offset.x,
+                                this.y + offset.y,
                                 this.image.width / this.frames.max,
                                 this.image.height);
 
         // Don't animate if not moving
+        if (!animate) return;
         if (!this.moving) return;
 
         // Animate the sprite if more than 1 frame is found in the image

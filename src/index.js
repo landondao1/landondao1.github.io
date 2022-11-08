@@ -8,7 +8,7 @@ import logo from "./css/images/yellow_partyhat_32.png";
 import "./css/index.css"
 
 import Home from './js/Home';
-import TinyIsland from './js/TinyIsland';
+import ChatIsland from './js/ChatIsland';
 
 const App = (props) => {
     
@@ -45,9 +45,9 @@ const App = (props) => {
                         <div className='dropdown-button' onClick={toggleDropdownMenu}>Projects <div className='arrow'></div></div>
                         <div className="dropdown-menu" onClick={hideDropdownMenu}>
                             <div className='project'>
-                                <Link to="/projects/tiny_island">
-                                    <span className="title">Tiny Island</span>
-                                    <span className="description">Interactive canvas game</span>
+                                <Link to="/projects/chat_island">
+                                    <span className="title">Chat Island</span>
+                                    <span className="description">Interactive canvas game with real-time chat enabled</span>
                                     <div className="tags">
                                         <span>Game Development</span>
                                         <span>ReactJS</span>
@@ -64,7 +64,7 @@ const App = (props) => {
 
             <Routes>
                 <Route path="/" element={<Home />}></Route>
-                <Route path="/projects/tiny_island" element={<TinyIsland />}></Route>
+                <Route path="/projects/chat_island" element={<ChatIsland />}></Route>
             </Routes>
         </HashRouter>
     );

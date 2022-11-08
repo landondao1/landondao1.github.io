@@ -17,7 +17,7 @@ export const concepts = [
     {
         title: "Serverless: Web Application", 
         tags: ["api-gateway", "lambda", "s3"],
-        description: "I created a highly scalable and low cost web applications. It used an api gateway to route web requests which called lambads that served pages from s3. To pull dynamic data, the front-end fetched data from other api gateway endpoints on the fly. \n\nOne issue I faced was cold lambda starts. When the very first person access the web application in the mornings, the first request took 10 to 30 seconds to load.",
+        description: "I created a highly scalable and low cost web application. It used an api gateway to route web requests which called lambads that served pages from s3. To pull dynamic data, the front-end fetched data from other api gateway endpoints on the fly. \n\nOne issue I faced was cold lambda starts. When the very first person access the web application in the mornings, the first request took 10 to 30 seconds to load.",
     },
     {
         title: "IaC: Ansible", 
@@ -33,6 +33,11 @@ export const concepts = [
         title: "IaC: Terraform", 
         tags: ["terraform"],
         description: "I've used terraform to build out an entire aws vpc. It was needed to clone my serverless event processing platform into a different vpc. It also maintained the state of the resources and allowed multiple engineers to make changes to resource attributes without ever having to go into the aws console.",
+    },
+    {
+        title: "ML: Root Cause Prediction", 
+        tags: ["sagemaker", "python"],
+        description: "I created a supervised machine learning model using a decision tree. It took in metrics of a server/network device/application right before an outage and identified what the root cause of the outage was and what resolution fixed the issue. Users would label the root cause and resolution after closing each Service Now incident, and over time the model was able to predict correctly ~83% of the time. I also showed the top 3 root causes and resolutions along with their confidence intervals. This gave operations engineers plenty of data to work off of and reduce the mean time to recover from outages. The models retrained themselves and uploaded new models every day as well.\n\nAn issue I ran into was configuration changes. These never gave any indicators to show what went wrong. I was able to work around this by also showing recent changes in the Service Now incident.",
     },
 ];
 export default concepts;

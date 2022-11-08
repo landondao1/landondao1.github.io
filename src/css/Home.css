@@ -231,6 +231,8 @@ section:not(#feature) p {
 .github {content: url("images/home/icon_github.png")}
 .jenkins {content: url("images/home/icon_jenkins.png")}
 .lambda {content: url("images/home/icon_lambda.png")}
+.python {content: url("images/home/icon_python.png")}
+.sagemaker {content: url("images/home/icon_sagemaker.png")}
 .s3 {content: url("images/home/icon_s3.png")}
 .sqs {content: url("images/home/icon_sqs.png")}
 .terraform {content: url("images/home/icon_terraform.png")}
