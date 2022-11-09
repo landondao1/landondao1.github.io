@@ -1,4 +1,4 @@
-import { getDatabase, ref, update, onDisconnect, onChildAdded, onValue, query } from "firebase/database";
+import { getDatabase, ref, update, onDisconnect, onChildAdded, onValue, onChildRemoved, query } from "firebase/database";
 import { getAuth, signInAnonymously } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 
@@ -50,6 +50,12 @@ class Firebase {
                 }
                 this.visitors[visitor.id] = new Sprite(this.canvas, sprite, visitor.x, visitor.y, visitor.frames, this.sprites);
             }
+        });
+        onChildRemoved(visitorQuery, (snapshot) => {
+            const visitor = snapshot.val();
+            if (!visitor) return
+
+            delete this.visitors[visitor.id];
         });
         onValue(visitorQuery, (snapshot) => {
             const value = snapshot.val();
