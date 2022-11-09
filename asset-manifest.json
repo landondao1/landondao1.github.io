@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.b5a985c1.css",
+    "main.css": "/static/css/main.65eea08b.css",
     "main.js": "/static/js/main.7525160c.js",
     "static/media/background_waterfall.jpg": "/static/media/background_waterfall.4407ff4ea565ea7faefc.jpg",
     "static/media/landon_einstein.jpg": "/static/media/landon_einstein.da3ddcf90fae98c1a3b8.jpg",
@@ -9,11 +9,11 @@
     "static/media/landon_dao_resume.pdf": "/static/media/landon_dao_resume.411f5b851cdab9b98138.pdf",
     "static/media/landon_rooftop.jpg": "/static/media/landon_rooftop.34332dfb90d9c508430e.jpg",
     "index.html": "/index.html",
-    "main.b5a985c1.css.map": "/static/css/main.b5a985c1.css.map",
+    "main.65eea08b.css.map": "/static/css/main.65eea08b.css.map",
     "main.7525160c.js.map": "/static/js/main.7525160c.js.map"
   },
   "entrypoints": [
-    "static/css/main.b5a985c1.css",
+    "static/css/main.65eea08b.css",
     "static/js/main.7525160c.js"
   ]
 }
