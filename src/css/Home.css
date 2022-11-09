@@ -75,7 +75,7 @@ section:not(#feature) p {
 
 .polaroids {
     white-space: nowrap;
-    width: 95%;
+    width: 100%;
 }
 .polaroid {
     -webkit-box-shadow: 0px 2px 5px #2f2f2f;
@@ -88,6 +88,12 @@ section:not(#feature) p {
     height: 310px;
     width: 300px;
 }
+@media (max-width: 1000px) {
+    .polaroid:not(:nth-child(3)) {
+        position: absolute;
+    }
+}
+
 .polaroid-picture {
     border: solid 1px #e2e2e2;
     overflow: hidden;
@@ -152,9 +158,13 @@ section:not(#feature) p {
     -webkit-box-shadow: 0px 2px 2px 0px #00000070;
     -moz-box-shadow: 0px 2px 2px 0px #00000070;
     box-shadow: 0px 2px 2px 0px #00000070;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     background-color: white;
     border-radius: 2px;
     padding: 25px;
+    max-width: 100%;
     width: 500px;
     margin: auto;
 }
