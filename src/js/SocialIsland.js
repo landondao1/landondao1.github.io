@@ -22,7 +22,7 @@ const tileWidth = 48;
 
 const moveDistance = 5;
 
-class ChatIsland extends Component {
+class SocialIsland extends Component {
 
     constructor(props) {
         super(props);
@@ -234,4 +234,4 @@ class ChatIsland extends Component {
     }
 }
 
-export default ChatIsland;
+export default SocialIsland;
